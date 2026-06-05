@@ -238,17 +238,34 @@
       min-width: 38px;
     }
     .pub-venue-badge {
-      display: inline-block;
-      font-family: var(--mono);
-      font-size: 0.65rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      background: var(--accent-light);
-      color: var(--accent);
-      border-radius: 3px;
-      padding: 0.15rem 0.5rem;
-      margin-bottom: 0.4rem;
-    }
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    background: var(--accent-light);
+    color: var(--accent);
+    border-radius: 3px;
+    padding: 0.15rem 0.5rem;
+    margin-bottom: 0.4rem;
+    margin-right: 0.25rem; /* Added slight right margin to separate the badges */
+  }
+
+  .pub-rank-badge {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border-radius: 3px;
+    padding: 0.15rem 0.5rem;
+    margin-bottom: 0.4rem;
+    
+    /* Red color theme */
+    background: #fee2e2; /* Soft, light red background (Tailwind red-100) */
+    color: #dc2626;      /* Vivid red text (Tailwind red-600) */
+    /* Optional: border: 1px solid #fca5a5; if you want a subtle border */
+  }
     .pub-title {
       font-family: var(--serif);
       font-size: 1.05rem;
@@ -575,6 +592,7 @@
         <span class="pub-year">2026</span>
         <div>
           <span class="pub-venue-badge">ISCA INTERSPEECH</span>
+          <span class="pub-rank-badge">CORE A</span>
           <p class="pub-title">Deepfake Word Detection by Next-token Prediction using Fine-tuned Whisper</p>
           <p class="pub-authors"><strong>Hoan My Tran</strong>, Xin Wang, Wanying Ge, Xuechen Liu, and Junichi Yamagishi</p>
           <div class="pub-links">
