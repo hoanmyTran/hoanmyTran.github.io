@@ -1,21 +1,15 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-  <meta charset="utf-8" />
-  <meta content="width=device-width,initial-scale=1" name="viewport" />
-  <meta content="#f7f7f4" name="theme-color" />
-  <meta
-    content="Hoan My Tran — researcher in machine learning, speech processing, and audio deepfake detection. Publications, research, and academic experience."
-    name="description" />
-  <title>Hoan My Tran — Machine Learning &amp; Speech Research</title>
-  <link href="https://fonts.googleapis.com" rel="preconnect" />
-  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&amp;family=DM+Mono:wght@400;500&amp;family=Instrument+Serif:ital@0;1&amp;display=swap"
-    rel="stylesheet" />
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="#ffffff" name="theme-color"/>
+<meta content="Hoan My Tran — researcher in machine learning, speech processing, and audio deepfake detection. Publications, research, and academic experience." name="description"/>
+<title>Hoan My Tran — Machine Learning &amp; Speech Research</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&amp;family=DM+Mono:wght@400;500&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet"/>
+<style>
     :root {
       --bg: #f7f7f4;
       --white: #fff;
@@ -1198,665 +1192,501 @@
       }
     }
   </style>
-  <style>
-    /* Research figure gallery — original schematic illustrations, not extracted paper figures */
-    .paper {
-      grid-template-columns: 48px 205px minmax(0, 1fr) 18px;
-      gap: 23px;
-      align-items: start;
-      padding: 35px 0
-    }
 
-    .paper-figure {
-      margin: 0;
-      min-width: 0
-    }
-
-    .figure-frame {
-      border: 1px solid #d9e2e3;
-      background: #eff4f3;
-      aspect-ratio: 1.5;
-      overflow: hidden;
-      border-radius: 4px;
-      position: relative;
-      transition: box-shadow .25s, transform .25s
-    }
-
-    .figure-frame svg {
-      display: block;
-      width: 100%;
-      height: 100%
-    }
-
-    .paper:hover .figure-frame {
-      box-shadow: 0 10px 25px rgba(20, 60, 70, .12);
-      transform: translateY(-2px)
-    }
-
-    .paper-figure figcaption {
-      margin-top: 8px;
-      font: 9px/1.5 var(--mono);
-      color: #8b999d;
-      letter-spacing: .02em
-    }
-
-    .paper h3 {
-      font-size: 17px
-    }
-
-    .paper-body {
-      min-width: 0
-    }
-
-    .gallery-note {
-      font-size: 12px;
-      line-height: 1.65;
-      color: #78878d;
-      margin: 10px 0 0
-    }
-
-    @media(max-width:900px) {
-      .paper {
-        grid-template-columns: 35px 165px minmax(0, 1fr) 10px;
-        gap: 15px
-      }
-    }
-
-    @media(max-width:650px) {
-      .paper {
-        grid-template-columns: 27px minmax(0, 1fr);
-        gap: 10px 12px
-      }
-
-      .paper-figure {
-        grid-column: 2;
-        grid-row: 1
-      }
-
-      .paper-body {
-        grid-column: 2;
-        grid-row: 2
-      }
-
-      .paper-index {
-        grid-row: 1 / span 2
-      }
-
-      .figure-frame {
-        max-width: 300px
-      }
-
-      .paper-figure figcaption {
-        margin-bottom: 3px
-      }
-    }
-
-    @media(prefers-reduced-motion:reduce) {
-      .figure-frame {
-        transition: none
-      }
-    }
-  </style>
-</head>
-
+<style>
+/* === WHITE RESEARCH EDITION | DiSL-inspired publication typography & spacing === */
+:root { --bg:#fff; --white:#fff; --ink:#202b35; --muted:#647480; --line:#e9edf0; --accent:#235f83; --pale:#eff6fa; }
+html,body,header,footer,.hero,.section,.contact-section,.feature-strip {background:#fff !important}
+header {background:rgba(255,255,255,.96) !important;border-bottom:1px solid #edf0f2}
+body {font-size:15px;color:var(--ink)}
+.section {border-bottom:1px solid #edf0f2}
+.hero {border-bottom:1px solid #edf0f2}
+.portrait {background:#fff}
+.interest {border-color:#edf0f2}
+#publications.section {padding-top:86px}
+#publications .section-top {margin-bottom:30px}
+#publications .section-heading {letter-spacing:-.03em}
+#publications .section-sub {max-width:700px}
+.pub-toolbar {padding:16px 0 24px;border-bottom:1px solid #dce4e9;}
+.pub-count {color:#778792;font-size:11px}
+.filter {border:1px solid #e5ebee;border-radius:6px;background:#fff;padding:8px 13px;font-size:11px}
+.filter:hover {background:#f3f8fb}
+.filter[aria-pressed=true] {background:#235f83;color:#fff;border-color:#235f83}
+.publication-year-group {margin:0;padding:0}
+.publication-year-group[hidden] {display:none}
+.year-group-heading {display:flex;align-items:baseline;gap:14px;margin:44px 0 8px;padding-bottom:15px;border-bottom:2px solid #e3edf2}
+.year-group-heading h3 {margin:0;font:650 30px/1.2 var(--sans);letter-spacing:-.045em;color:#1c3345}
+.year-paper-count {font:11px var(--mono);color:#8a99a3}
+.paper {display:grid !important;grid-template-columns:minmax(0,290px) minmax(0,1fr) !important;gap:30px !important;align-items:start;padding:28px 4px !important;border-bottom:1px solid #edf1f3;transition:background .18s}
+.paper[hidden] {display:none !important}
+.paper:hover {padding-left:4px !important;padding-right:4px !important;background:#fbfdfe}
+.paper-index,.paper-arrow {display:none !important}
+.paper-figure {grid-column:1 !important;grid-row:1 !important;width:100%;min-width:0;margin:0 !important}
+.paper-body {grid-column:2 !important;grid-row:1 !important;min-width:0}
+.figure-frame {display:flex;align-items:center;justify-content:center;position:relative;width:100%;height:auto !important;min-height:130px;max-height:260px;aspect-ratio:auto !important;overflow:hidden;border:1px solid #edf0f2 !important;border-radius:7px;background:#fff !important;padding:9px;box-shadow:none !important;transform:none !important}
+.figure-frame img.teaser-image {display:block;width:100%;height:auto !important;max-height:238px;object-fit:contain !important;background:transparent !important}
+.figure-frame img.teaser-image[hidden] {display:none !important}
+.paper:hover .figure-frame {box-shadow:0 6px 20px rgba(31,55,72,.05) !important;transform:none !important}
+.teaser-placeholder {inset:0;align-items:center;justify-content:center;background:#fff !important;color:#94a5ae;padding:10px}
+.placeholder-icon {background:#fff;border:1px dashed #cbd7de;color:#8097a4}
+.placeholder-label {color:#728995}
+.placeholder-path {color:#92a4ae}
+.paper-eyebrow {display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:1px 0 11px}
+.venue {font:700 10px/1.5 var(--sans);letter-spacing:.025em;color:#246487;text-transform:uppercase;background:#eaf4fa;border:1px solid #dcebf3;border-radius:4px;padding:4px 8px}
+.research-tag {font:600 10px/1.5 var(--sans);color:#768892;background:#f2f5f6;border:1px solid #e9eef0;border-radius:4px;padding:4px 8px}
+.paper h3 {font:700 clamp(17px,1.9vw,21px)/1.39 var(--sans);color:#172d3c;letter-spacing:-.025em;max-width:none;margin:0 0 12px}
+.authors {font-size:12.5px;line-height:1.85;color:#667782;margin:0 0 13px}
+.authors strong {color:#244c69;font-weight:750}
+.paper-actions {gap:8px 14px}
+.paper-link {font:650 11px var(--sans);border:1px solid #d4e4ed;border-radius:4px;padding:5px 10px;background:white;color:#22618a;transition:background .18s,border-color .18s}
+.paper-link:hover {background:#eff7fc;border-color:#a8cadd}
+.unavailable {font-size:11px;color:#9aa9b2}
+.footer-inner {align-items:center;flex-wrap:wrap}
+.footer-counter {flex-basis:100%;width:100%;margin:10px auto 0 !important}
+@media(max-width:850px){.paper {grid-template-columns:minmax(0,230px) minmax(0,1fr) !important;gap:20px !important}.figure-frame {min-height:100px}}
+@media(max-width:620px){#publications.section{padding-top:62px}.paper {grid-template-columns:minmax(0,1fr) !important;gap:15px !important;padding:25px 0 !important}.paper-figure {grid-column:1 !important;grid-row:1 !important;max-width:100%}.paper-body {grid-column:1 !important;grid-row:2 !important}.figure-frame{max-width:100%;min-height:130px;max-height:260px}.figure-frame img.teaser-image{max-height:238px}.paper h3{font-size:18px}.year-group-heading{margin-top:32px}.year-group-heading h3{font-size:25px}.footer-inner{justify-content:center;text-align:center}}
+</style></head>
 <body>
-  <header>
-    <div class="wrap topbar"><a class="wordmark" href="#home">Hoan My Tran<span class="dot">.</span></a>
-      <nav aria-label="Main navigation"><a href="#about">About</a><a href="#publications">Publications</a><a
-          href="#experience">Experience</a><a class="nav-contact" href="mailto:hoan.tran@irisa.fr">Get in touch ↗</a>
-      </nav>
-    </div>
-  </header>
-  <main>
-    <section class="hero" id="home">
-      <div class="wrap">
-        <div class="hero-layout">
-          <div>
-            <div class="status">Machine learning &amp; speech research</div>
-            <h1>Hoan My<br /><em>Tran.</em></h1>
-            <p class="hero-description">Researcher working at the intersection of <strong>machine learning</strong> and
+<header>
+<div class="wrap topbar"><a class="wordmark" href="#home">Hoan My Tran<span class="dot">.</span></a>
+<nav aria-label="Main navigation"><a href="#about">About</a><a href="#publications">Publications</a><a href="#experience">Experience</a><a class="nav-contact" href="mailto:hoan.tran@irisa.fr">Get in touch ↗</a>
+</nav>
+</div>
+</header>
+<main>
+<section class="hero" id="home">
+<div class="wrap">
+<div class="hero-layout">
+<div>
+<div class="status">Machine learning &amp; speech research</div>
+<h1>Hoan My<br/><em>Tran.</em></h1>
+<p class="hero-description">Researcher working at the intersection of <strong>machine learning</strong> and
               <strong>speech processing</strong>, with a focus on making audio deepfake detection more robust and
               reliable.
             </p>
-            <div class="hero-actions"><a class="button primary" href="mailto:hoan.tran@irisa.fr">Email me
-                <span>↗</span></a><a class="button"
-                href="https://scholar.google.com/citations?user=xBko7h8AAAAJ&amp;hl=fr" rel="noopener"
-                target="_blank">Google Scholar ↗</a><a class="button" href="https://github.com/hoanmyTran"
-                rel="noopener" target="_blank">GitHub ↗</a><a class="button"
-                href="https://www.linkedin.com/in/hoanmy-tran/" rel="noopener" target="_blank">LinkedIn ↗</a></div>
-          </div>
-          <div class="portrait-area"><img alt="Portrait of Hoan My Tran" class="portrait"
-              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
-              src="portfolio_image.jpeg" />
-            <div aria-label="Profile picture placeholder" class="portrait-fallback">HT</div>
-            <div class="portrait-caption"><span>RESEARCH PROFILE</span><span>FRANCE · 2021</span></div>
-          </div>
-        </div>
-        <div class="hero-bottom">
-          <div><span>Research affiliation</span><span>IRISA · University of Rennes</span></div>
-          <div><span>PhD</span><span>Computer Science, 2026</span></div>
-          <div><span>Research focus</span><span>Speech · ML · Deepfake Detection</span></div>
-        </div>
-      </div>
-    </section>
-    <section class="section" id="about">
-      <div class="wrap">
-        <div class="section-top"><span class="section-number">01 / ABOUT</span>
-          <div>
-            <h2 class="section-heading">A little about me<span style="color:var(--accent)">.</span></h2>
-            <p class="section-sub">Background, academic path, and the questions that drive my research.</p>
-          </div>
-        </div>
-        <div class="about-layout">
-          <div class="about-copy">
-            <p>I am Hoan My Tran, a lecturer and researcher at IUT de Lannion, University of Rennes, France. I defended
+<div class="hero-actions"><a class="button primary" href="mailto:hoan.tran@irisa.fr">Email me
+                <span>↗</span></a><a class="button" href="https://scholar.google.com/citations?user=xBko7h8AAAAJ&amp;hl=fr" rel="noopener" target="_blank">Google Scholar ↗</a><a class="button" href="https://github.com/hoanmyTran" rel="noopener" target="_blank">GitHub ↗</a><a class="button" href="https://www.linkedin.com/in/hoanmy-tran/" rel="noopener" target="_blank">LinkedIn ↗</a></div>
+</div>
+<div class="portrait-area"><img alt="Portrait of Hoan My Tran" class="portrait" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" src="portfolio_image.jpeg"/>
+<div aria-label="Profile picture placeholder" class="portrait-fallback">HT</div>
+<div class="portrait-caption"><span>RESEARCH PROFILE</span><span>FRANCE · 2021</span></div>
+</div>
+</div>
+<div class="hero-bottom">
+<div><span>Research affiliation</span><span>IRISA · University of Rennes</span></div>
+<div><span>PhD</span><span>Computer Science, 2026</span></div>
+<div><span>Research focus</span><span>Speech · ML · Deepfake Detection</span></div>
+</div>
+</div>
+</section>
+<section class="section" id="about">
+<div class="wrap">
+<div class="section-top"><span class="section-number">01 / ABOUT</span>
+<div>
+<h2 class="section-heading">A little about me<span style="color:var(--accent)">.</span></h2>
+<p class="section-sub">Background, academic path, and the questions that drive my research.</p>
+</div>
+</div>
+<div class="about-layout">
+<div class="about-copy">
+<p>I am Hoan My Tran, a lecturer and researcher at IUT de Lannion, University of Rennes, France. I defended
               my Ph.D. in Computer Science in March 2026 at the University of Rennes, within the <strong>IRISA /
                 EXPRESSION</strong> research team.</p>
-            <p>My doctoral research was supervised by Prof. Damien Lolive, Prof. François Goasdoué, Prof.
+<p>My doctoral research was supervised by Prof. Damien Lolive, Prof. François Goasdoué, Prof.
               Pierre-François Marteau, Asst. Prof. Arnaud Delhay-Lorrain, and Asst. Prof. Aghilas Sini.</p>
-            <p>Previously, I studied computer science at IUT de Villetaneuse (Sorbonne Paris North University) and
+<p>Previously, I studied computer science at IUT de Villetaneuse (Sorbonne Paris North University) and
               earned an engineering degree specializing in software engineering from IMT Atlantique.</p>
-            <p>Beyond research, I enjoy communicating science to wider audiences. I was invited to give a <a
-                href="https://www.youtube.com/watch?v=J9GhG_2qNPk&amp;t=9s" rel="noopener" target="_blank">TEDx talk
+<p>Beyond research, I enjoy communicating science to wider audiences. I was invited to give a <a href="https://www.youtube.com/watch?v=J9GhG_2qNPk&amp;t=9s" rel="noopener" target="_blank">TEDx talk
                 ↗</a> about deepfake technology and its societal impact.</p>
-          </div>
-          <aside class="side-panel">
-            <div class="side-title">Research interests</div>
-            <div class="interest">Audio deepfake detection</div>
-            <div class="interest">Speech processing</div>
-            <div class="interest">Speech foundation models</div>
-            <div class="interest">Spoofing and robustness</div>
-            <div class="interest">Deep learning</div>
-            <div class="interest">Efficient machine learning</div>
-          </aside>
-        </div>
-      </div>
-    </section>
-    <!-- <div class="feature-strip">
+</div>
+<aside class="side-panel">
+<div class="side-title">Research interests</div>
+<div class="interest">Audio deepfake detection</div>
+<div class="interest">Speech processing</div>
+<div class="interest">Speech foundation models</div>
+<div class="interest">Spoofing and robustness</div>
+<div class="interest">Deep learning</div>
+<div class="interest">Efficient machine learning</div>
+</aside>
+</div>
+</div>
+</section>
+<!-- <div class="feature-strip">
       <div class="wrap feature-inner"><span>Research highlight / 2026</span>
         <p>Progressive Layer-wise Supervision — NeurIPS 2026</p><a href="#publications">Explore publications ↗</a>
       </div>
     </div> -->
-    <section class="section" id="publications">
-      <div class="wrap">
-        <div class="section-top"><span class="section-number">02 / RESEARCH</span>
-          <div>
-            <h2 class="section-heading">Selected publications<span style="color:var(--accent)">.</span></h2>
-            <p class="section-sub">Research contributions in speech deepfake detection, efficient deep learning, and
-              representation learning.</p>
-          </div>
-        </div>
-        <div class="pub-toolbar"><span class="pub-count" id="pub-count">13 publications</span>
-          <div aria-label="Filter publications by year" class="filters" role="group"><button aria-pressed="true"
-              class="filter" data-filter="all">All work</button><button aria-pressed="false" class="filter"
-              data-filter="2026">2026</button><button aria-pressed="false" class="filter"
-              data-filter="2025">2025</button><button aria-pressed="false" class="filter"
-              data-filter="older">2024</button></div>
-        </div>
-        <div id="paper-list">
-          <article class="paper" data-kind="International Journals" data-year="2026">
-            <div class="paper-index">01<span class="index-line"></span></div>
-            <figure class="paper-figure">
-              <div class="figure-frame" style="height: 70px;"><img
-                  alt="Teaser image for Speech DF Arena: A Leaderboard for Speech DeepFake Detection Models"
-                  class="teaser-image" loading="lazy"
-                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-                  src="images/df_arena.jpg" />
-                <div class="teaser-placeholder" style="display:none;">
-                  <div class="placeholder-icon">IMG</div>
-                  <div class="placeholder-label">Add teaser image</div>
-                  <div class="placeholder-path">International Journals · 2026</div>
-                  <div class="placeholder-path">images/paper-01.jpg</div>
-                </div>
-              </div>
-              <figcaption>MODEL BENCHMARK / OVERVIEW</figcaption>
-            </figure>
-            <div class="paper-body">
-              <div class="paper-eyebrow"><span class="venue">IEEE Open Journal of Signal Processing (OJSP)</span><span
-                  class="paper-year">2026</span></div>
-              <h3>Speech DF Arena: A Leaderboard for Speech DeepFake Detection Models</h3>
-              <p class="authors">Sandipana Dowerah, Atharva Kulkarni, Ajinkya Kulkarni, <strong>Hoan My Tran</strong>,
+<section class="section" id="publications">
+<div class="wrap">
+<div class="section-top"><span class="section-number">02 / RESEARCH</span>
+<div>
+<h2 class="section-heading">Publications<span style="color:var(--accent)">.</span></h2>
+<p class="section-sub">Peer-reviewed conference papers, journal articles, and workshops in speech processing, audio authenticity, and machine learning.</p>
+</div>
+</div>
+<div class="pub-toolbar"><span class="pub-count" id="pub-count">13 publications</span>
+<div aria-label="Filter publications by year" class="filters" role="group"><button aria-pressed="true" class="filter" data-filter="all">All work</button><button aria-pressed="false" class="filter" data-filter="2026">2026</button><button aria-pressed="false" class="filter" data-filter="2025">2025</button><button aria-pressed="false" class="filter" data-filter="older">2024</button></div>
+</div>
+<div id="paper-list"><section aria-label="2026 publications" class="publication-year-group" data-year-group="2026"><div class="year-group-heading"><h3>2026</h3><span class="year-paper-count">8 papers</span></div><article class="paper" data-kind="International Journals" data-year="2026">
+<div class="paper-index">01<span class="index-line"></span></div>
+<figure class="paper-figure">
+<div class="figure-frame"><img alt="Teaser image for Speech DF Arena: A Leaderboard for Speech DeepFake Detection Models" class="teaser-image" loading="lazy" onerror="this.hidden=true;const p=this.parentElement.querySelector('.teaser-placeholder');if(p)p.style.display='flex';" onload="this.hidden=false;const p=this.parentElement.querySelector('.teaser-placeholder');if(p)p.style.display='none';" src="images/df_arena.jpg"/>
+<div class="teaser-placeholder" style="display:none;">
+<div class="placeholder-icon">IMG</div>
+<div class="placeholder-label">Add teaser image</div>
+<div class="placeholder-path">International Journals · 2026</div>
+<div class="placeholder-path">images/df_arena.jpg</div>
+</div>
+</div>
+
+</figure>
+<div class="paper-body">
+<div class="paper-eyebrow"><span class="venue">IEEE Open Journal of Signal Processing (OJSP)</span><span class="research-tag">Journal</span></div>
+<h3>Speech DF Arena: A Leaderboard for Speech DeepFake Detection Models</h3>
+<p class="authors">Sandipana Dowerah, Atharva Kulkarni, Ajinkya Kulkarni, <strong>Hoan My Tran</strong>,
                 Joonas Kalda, Artem Fedorchenko, Benoit Fauve, Damien Lolive, Tanel Alumäe, and Matthew Magimai Doss</p>
-              <div class="paper-actions"><a class="paper-link" href="https://ieeexplore.ieee.org/document/11345101"
-                  rel="noopener noreferrer" target="_blank">Paper <span aria-hidden="true">↗</span></a><a
-                  class="paper-link" href="https://arxiv.org/abs/2509.02859" rel="noopener noreferrer"
-                  target="_blank">arXiv <span aria-hidden="true">↗</span></a><a class="paper-link"
-                  href="https://github.com/Speech-Arena/speech_df_arena" rel="noopener noreferrer" target="_blank">Code
+<div class="paper-actions"><a class="paper-link" href="https://ieeexplore.ieee.org/document/11345101" rel="noopener noreferrer" target="_blank">Paper <span aria-hidden="true">↗</span></a><a class="paper-link" href="https://arxiv.org/abs/2509.02859" rel="noopener noreferrer" target="_blank">arXiv <span aria-hidden="true">↗</span></a><a class="paper-link" href="https://github.com/Speech-Arena/speech_df_arena" rel="noopener noreferrer" target="_blank">Code
                   <span aria-hidden="true">↗</span></a></div>
-            </div>
-          </article>
-          <article class="paper" data-kind="International Conferences" data-year="2026">
-            <div class="paper-index">02<span class="index-line"></span></div>
-            <figure class="paper-figure">
-              <div class="figure-frame" style="height: 210px;"><img
-                  alt="Teaser image for Progressive Layer-wise Supervision: Deep-to-Shallow Supervision Annealing for Efficient and Robust Speech Deepfake Detection"
-                  class="teaser-image" loading="lazy"
-                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-                  src="images/neurips2026.png" />
-                <div class="teaser-placeholder" style="display:none;">
-                  <div class="placeholder-icon">IMG</div>
-                  <div class="placeholder-label">Add teaser image</div>
-                  <div class="placeholder-path">International Conferences · 2026</div>
-                  <div class="placeholder-path">images/paper-02.jpg</div>
-                </div>
-              </div>
-              <figcaption>REPRESENTATION / LAYERS</figcaption>
-            </figure>
-            <div class="paper-body">
-              <div class="paper-eyebrow"><span class="venue">Neural Information Processing Systems (NeurIPS)</span><span
-                  class="paper-year">2026</span></div>
-              <h3>Progressive Layer-wise Supervision: Deep-to-Shallow Supervision Annealing for Efficient and Robust
+</div>
+</article><article class="paper" data-kind="International Conferences" data-year="2026">
+<div class="paper-index">02<span class="index-line"></span></div>
+<figure class="paper-figure">
+<div class="figure-frame"><img alt="Teaser image for Progressive Layer-wise Supervision: Deep-to-Shallow Supervision Annealing for Efficient and Robust Speech Deepfake Detection" class="teaser-image" loading="lazy" onerror="this.hidden=true;const p=this.parentElement.querySelector('.teaser-placeholder');if(p)p.style.display='flex';" onload="this.hidden=false;const p=this.parentElement.querySelector('.teaser-placeholder');if(p)p.style.display='none';" src="images/neurips2026.png"/>
+<div class="teaser-placeholder" style="display:none;">
+<div class="placeholder-icon">IMG</div>
+<div class="placeholder-label">Add teaser image</div>
+<div class="placeholder-path">International Conferences · 2026</div>
+<div class="placeholder-path">images/neurips2026.png</div>
+</div>
+</div>
+
+</figure>
+<div class="paper-body">
+<div class="paper-eyebrow"><span class="venue">Neural Information Processing Systems (NeurIPS)</span><span class="research-tag">Conference</span></div>
+<h3>Progressive Layer-wise Supervision: Deep-to-Shallow Supervision Annealing for Efficient and Robust
                 Speech Deepfake Detection</h3>
-              <p class="authors"><strong>Hoan My Tran</strong>, Xin Wang, and Xuechen Liu</p>
-              <div class="paper-actions"><span class="unavailable">Link coming soon</span></div>
-            </div>
-          </article>
-          <article class="paper" data-kind="International Conferences" data-year="2026">
-            <div class="paper-index">03<span class="index-line"></span></div>
-            <figure class="paper-figure">
-              <div class="figure-frame" style="height: 163px;"><img
-                  alt="Teaser image for Deepfake Word Detection by Next-token Prediction using Fine-tuned Whisper"
-                  class="teaser-image" loading="lazy"
-                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-                  src="images/interspeech2026.png" />
-                <div class="teaser-placeholder" style="display:none;">
-                  <div class="placeholder-icon">IMG</div>
-                  <div class="placeholder-label">Add teaser image</div>
-                  <div class="placeholder-path">International Conferences · 2026</div>
-                  <div class="placeholder-path">images/paper-03.jpg</div>
-                </div>
-              </div>
-              <figcaption>TOKEN-LEVEL / DETECTION</figcaption>
-            </figure>
-            <div class="paper-body">
-              <div class="paper-eyebrow"><span class="venue">ISCA INTERSPEECH</span><span class="paper-year">2026</span>
-              </div>
-              <h3>Deepfake Word Detection by Next-token Prediction using Fine-tuned Whisper</h3>
-              <p class="authors"><strong>Hoan My Tran</strong>, Xin Wang, Wanying Ge, Xuechen Liu, and Junichi Yamagishi
+<p class="authors"><strong>Hoan My Tran</strong>, Xin Wang, and Xuechen Liu</p>
+<div class="paper-actions"><span class="unavailable">Publication details forthcoming</span></div>
+</div>
+</article><article class="paper" data-kind="International Conferences" data-year="2026">
+<div class="paper-index">03<span class="index-line"></span></div>
+<figure class="paper-figure">
+<div class="figure-frame"><img alt="Teaser image for Deepfake Word Detection by Next-token Prediction using Fine-tuned Whisper" class="teaser-image" loading="lazy" onerror="this.hidden=true;const p=this.parentElement.querySelector('.teaser-placeholder');if(p)p.style.display='flex';" onload="this.hidden=false;const p=this.parentElement.querySelector('.teaser-placeholder');if(p)p.style.display='none';" src="images/interspeech2026.png"/>
+<div class="teaser-placeholder" style="display:none;">
+<div class="placeholder-icon">IMG</div>
+<div class="placeholder-label">Add teaser image</div>
+<div class="placeholder-path">International Conferences · 2026</div>
+<div class="placeholder-path">images/interspeech2026.png</div>
+</div>
+</div>
+
+</figure>
+<div class="paper-body">
+<div class="paper-eyebrow"><span class="venue">ISCA INTERSPEECH</span>
+<span class="research-tag">Conference</span></div>
+<h3>Deepfake Word Detection by Next-token Prediction using Fine-tuned Whisper</h3>
+<p class="authors"><strong>Hoan My Tran</strong>, Xin Wang, Wanying Ge, Xuechen Liu, and Junichi Yamagishi
               </p>
-              <div class="paper-actions"><a class="paper-link"
-                  href="https://www.isca-archive.org/interspeech_2026/tran26_interspeech.html" rel="noopener noreferrer"
-                  target="_blank">Paper <span aria-hidden="true">↗</span></a><a class="paper-link"
-                  href="https://arxiv.org/abs/2602.22658" rel="noopener noreferrer" target="_blank">arXiv <span
-                    aria-hidden="true">↗</span></a><a class="paper-link"
-                  href="https://github.com/nii-yamagishilab/Whisper-deepfake-word-detection" rel="noopener noreferrer"
-                  target="_blank">Code
+<div class="paper-actions"><a class="paper-link" href="https://www.isca-archive.org/interspeech_2026/tran26_interspeech.html" rel="noopener noreferrer" target="_blank">Paper <span aria-hidden="true">↗</span></a><a class="paper-link" href="https://arxiv.org/abs/2602.22658" rel="noopener noreferrer" target="_blank">arXiv <span aria-hidden="true">↗</span></a><a class="paper-link" href="https://github.com/nii-yamagishilab/Whisper-deepfake-word-detection" rel="noopener noreferrer" target="_blank">Code
                   <span aria-hidden="true">↗</span></a></div>
-            </div>
-          </article>
-          <article class="paper" data-kind="International Conferences" data-year="2026">
-            <div class="paper-index">04<span class="index-line"></span></div>
-            <figure class="paper-figure">
-              <div class="figure-frame" style="height: 81px;"><img
-                  alt="Teaser image for When depth is redundant: Efficient transformer-based speech anti-spoofing"
-                  class="teaser-image" loading="lazy"
-                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-                  src="images/acl2026.png" />
-                <div class="teaser-placeholder" style="display:none;">
-                  <div class="placeholder-icon">IMG</div>
-                  <div class="placeholder-label">Add teaser image</div>
-                  <div class="placeholder-path">International Conferences · 2026</div>
-                  <div class="placeholder-path">images/paper-04.jpg</div>
-                </div>
-              </div>
-              <figcaption>REDUNDANCY / ANALYSIS</figcaption>
-            </figure>
-            <div class="paper-body">
-              <div class="paper-eyebrow"><span class="venue">Findings of the Association for Computational Linguistics
-                  (ACL Findings)</span><span class="paper-year">2026</span>
-              </div>
-              <h3>When depth is redundant: Efficient transformer-based speech anti-spoofing</h3>
-              <p class="authors"><strong>Hoan My Tran</strong>, Damien Lolive, Aghilas Sini, Arnaud Delhay,
+</div>
+</article><article class="paper" data-kind="International Conferences" data-year="2026">
+<div class="paper-index">04<span class="index-line"></span></div>
+<figure class="paper-figure">
+<div class="figure-frame"><img alt="Teaser image for When depth is redundant: Efficient transformer-based speech anti-spoofing" class="teaser-image" loading="lazy" onerror="this.hidden=true;const p=this.parentElement.querySelector('.teaser-placeholder');if(p)p.style.display='flex';" onload="this.hidden=false;const p=this.parentElement.querySelector('.teaser-placeholder');if(p)p.style.display='none';" src="images/acl2026.png"/>
+<div class="teaser-placeholder" style="display:none;">
+<div class="placeholder-icon">IMG</div>
+<div class="placeholder-label">Add teaser image</div>
+<div class="placeholder-path">International Conferences · 2026</div>
+<div class="placeholder-path">images/acl2026.png</div>
+</div>
+</div>
+
+</figure>
+<div class="paper-body">
+<div class="paper-eyebrow"><span class="venue">Findings of the Association for Computational Linguistics
+                  (ACL Findings)</span>
+<span class="research-tag">Conference</span></div>
+<h3>When depth is redundant: Efficient transformer-based speech anti-spoofing</h3>
+<p class="authors"><strong>Hoan My Tran</strong>, Damien Lolive, Aghilas Sini, Arnaud Delhay,
                 Pierre-François Marteau, and David Guennec</p>
-              <div class="paper-actions"><a class="paper-link" href="https://aclanthology.org/2026.findings-acl.318/"
-                  rel="noopener noreferrer" target="_blank">Paper <span aria-hidden="true">↗</span></a></div>
-            </div>
-          </article>
-          <article class="paper" data-kind="International Conferences" data-year="2026">
-            <div class="paper-index">05<span class="index-line"></span></div>
-            <figure class="paper-figure">
-              <div class="figure-frame" style="height: 174px;"><img
-                  alt="Teaser image for KAN we make models simpler for Audio Deepfake Detection with Kolmogorov-Arnold Networks?"
-                  class="teaser-image" loading="lazy"
-                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-                  src="images/icassp2026.png" />
-                <div class="teaser-placeholder" style="display:none;">
-                  <div class="placeholder-icon">IMG</div>
-                  <div class="placeholder-label">Add teaser image</div>
-                  <div class="placeholder-path">International Conferences · 2026</div>
-                  <div class="placeholder-path">images/paper-05.jpg</div>
-                </div>
-              </div>
-              <figcaption>EXPRESSIVENESS / EFFICIENCY</figcaption>
-            </figure>
-            <div class="paper-body">
-              <div class="paper-eyebrow"><span class="venue">IEEE International Conference on Acoustics, Speech, and
-                  Signal Processing (ICASSP)</span><span class="paper-year">2026</span>
-              </div>
-              <h3>KAN we make models simpler for Audio Deepfake Detection with Kolmogorov-Arnold Networks?</h3>
-              <p class="authors"><strong>Hoan My Tran</strong>, Aghilas Sini, David Guennec, Arnaud Delhay, Damien
+<div class="paper-actions"><a class="paper-link" href="https://aclanthology.org/2026.findings-acl.318/" rel="noopener noreferrer" target="_blank">Paper <span aria-hidden="true">↗</span></a></div>
+</div>
+</article><article class="paper" data-kind="International Conferences" data-year="2026">
+<div class="paper-index">05<span class="index-line"></span></div>
+<figure class="paper-figure">
+<div class="figure-frame"><img alt="Teaser image for KAN we make models simpler for Audio Deepfake Detection with Kolmogorov-Arnold Networks?" class="teaser-image" loading="lazy" onerror="this.hidden=true;const p=this.parentElement.querySelector('.teaser-placeholder');if(p)p.style.display='flex';" onload="this.hidden=false;const p=this.parentElement.querySelector('.teaser-placeholder');if(p)p.style.display='none';" src="images/icassp2026.png"/>
+<div class="teaser-placeholder" style="display:none;">
+<div class="placeholder-icon">IMG</div>
+<div class="placeholder-label">Add teaser image</div>
+<div class="placeholder-path">International Conferences · 2026</div>
+<div class="placeholder-path">images/icassp2026.png</div>
+</div>
+</div>
+
+</figure>
+<div class="paper-body">
+<div class="paper-eyebrow"><span class="venue">IEEE International Conference on Acoustics, Speech, and
+                  Signal Processing (ICASSP)</span>
+<span class="research-tag">Conference</span></div>
+<h3>KAN we make models simpler for Audio Deepfake Detection with Kolmogorov-Arnold Networks?</h3>
+<p class="authors"><strong>Hoan My Tran</strong>, Aghilas Sini, David Guennec, Arnaud Delhay, Damien
                 Lolive, and Pierre-François Marteau</p>
-              <div class="paper-actions"><a class="paper-link" href="https://ieeexplore.ieee.org/document/11460320"
-                  rel="noopener noreferrer" target="_blank">Paper <span aria-hidden="true">↗</span></a></div>
-            </div>
-          </article>
-          <article class="paper" data-kind="International Conferences" data-year="2025">
-            <div class="paper-index">06<span class="index-line"></span></div>
-            <figure class="paper-figure">
-              <div class="figure-frame" style="height: 110px;"><img
-                  alt="Teaser image for Multi-level SSL feature gating for audio deepfake detection"
-                  class="teaser-image" loading="lazy"
-                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-                  src="images/acmmm2025.png" />
-                <div class="teaser-placeholder" style="display:none;">
-                  <div class="placeholder-icon">IMG</div>
-                  <div class="placeholder-label">Add teaser image</div>
-                  <div class="placeholder-path">International Conferences · 2025</div>
-                  <div class="placeholder-path">images/paper-06.jpg</div>
-                </div>
-              </div>
-              <figcaption>DISSIMILARITY</figcaption>
-            </figure>
-            <div class="paper-body">
-              <div class="paper-eyebrow"><span class="venue">ACM Multimedia</span><span class="paper-year">2025</span>
-              </div>
-              <h3>Multi-level SSL feature gating for audio deepfake detection</h3>
-              <p class="authors"><strong>Hoan My Tran</strong>, Damien Lolive, Aghilas Sini, Arnaud Delhay,
-                Pierre-François Marteau, and David Guennec</p>
-              <div class="paper-actions"><a class="paper-link" href="https://dl.acm.org/doi/10.1145/3746027.3754568"
-                  rel="noopener noreferrer" target="_blank">Paper <span aria-hidden="true">↗</span></a><a
-                  class="paper-link" href="https://arxiv.org/abs/2509.03409" rel="noopener noreferrer"
-                  target="_blank">arXiv <span aria-hidden="true">↗</span></a><a class="paper-link"
-                  href="https://github.com/hoanmyTran/dissimilarity_deepfake_detection" rel="noopener noreferrer"
-                  target="_blank">Code
-                  <span aria-hidden="true">↗</span></a></div>
-            </div>
-          </article>
-          <article class="paper" data-kind="International Conferences" data-year="2025">
-            <div class="paper-index">07<span class="index-line"></span></div>
-            <figure class="paper-figure">
-              <div class="figure-frame" style="height: 92px;"><img
-                  alt="Teaser image for KAN You Hear the Truth? Audio Deepfake Detection with Kolmogorov–Arnold Networks"
-                  class="teaser-image" loading="lazy"
-                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-                  src="images/eusipco2026.png" />
-                <div class="teaser-placeholder" style="display:none;">
-                  <div class="placeholder-icon">IMG</div>
-                  <div class="placeholder-label">Add teaser image</div>
-                  <div class="placeholder-path">International Conferences · 2025</div>
-                  <div class="placeholder-path">images/paper-07.jpg</div>
-                </div>
-              </div>
-              <figcaption>EXPRESSIVENESS</figcaption>
-            </figure>
-            <div class="paper-body">
-              <div class="paper-eyebrow"><span class="venue">IEEE European Signal Processing Conference
-                  (EUSIPCO)</span><span class="paper-year">2025</span>
-              </div>
-              <h3>KAN You Hear the Truth? Audio Deepfake Detection with Kolmogorov–Arnold Networks</h3>
-              <p class="authors"><strong>Hoan My Tran</strong>, Damien Lolive, David Guennec, Aghilas Sini, Arnaud
-                Delhay, and Pierre-François Marteau</p>
-              <div class="paper-actions"><a class="paper-link" href="https://ieeexplore.ieee.org/document/11226534"
-                  rel="noopener noreferrer" target="_blank">Paper <span aria-hidden="true">↗</span></a><a
-                  class="paper-link" href="https://hal.science/hal-05283051v1" rel="noopener noreferrer"
-                  target="_blank">hal <span aria-hidden="true">↗</span></a></div>
-            </div>
-          </article>
-          <article class="paper" data-kind="International Conferences" data-year="2025">
-            <div class="paper-index">08<span class="index-line"></span></div>
-            <figure class="paper-figure">
-              <div class="figure-frame" style="height: 200px;"><img
-                  alt="Teaser image for Leveraging SSL Speech Features and Mamba for Enhanced DeepFake Detection"
-                  class="teaser-image" loading="lazy"
-                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-                  src="images/interspeech2025.png" />
-                <div class="teaser-placeholder" style="display:none;">
-                  <div class="placeholder-icon">IMG</div>
-                  <div class="placeholder-label">Add teaser image</div>
-                  <div class="placeholder-path">International Conferences · 2025</div>
-                  <div class="placeholder-path">images/paper-08.jpg</div>
-                </div>
-              </div>
-              <figcaption>EFFICIENCY</figcaption>
-            </figure>
-            <div class="paper-body">
-              <div class="paper-eyebrow"><span class="venue">ISCA INTERSPEECH</span><span class="paper-year">2025</span>
-              </div>
-              <h3>Leveraging SSL Speech Features and Mamba for Enhanced DeepFake Detection</h3>
-              <p class="authors"><strong>Hoan My Tran</strong>, Damien Lolive, David Guennec, Aghilas Sini, Arnaud
-                Delhay, and Pierre-François Marteau</p>
-              <div class="paper-actions"><a class="paper-link"
-                  href="https://www.isca-archive.org/interspeech_2025/tran25b_interspeech.html"
-                  rel="noopener noreferrer" target="_blank">Paper <span aria-hidden="true">↗</span></a><a
-                  class="paper-link" href="https://github.com/hoanmyTran/dissimilarity_deepfake_detection"
-                  rel="noopener noreferrer" target="_blank">Code
-                  <span aria-hidden="true">↗</span></a></div>
-            </div>
-          </article>
-          <article class="paper" data-kind="International Conferences" data-year="2024">
-            <div class="paper-index">09<span class="index-line"></span></div>
-            <figure class="paper-figure">
-              <div class="figure-frame" style="height: 63px;"><img
-                  alt="Teaser image for Spoofed Speech Detection with a Focus on Speaker Embedding" class="teaser-image"
-                  loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-                  src="images/interspeech2024_architecture.png" />
-                <!-- <div class="teaser-placeholder" style="display:none;">
-                  <div class="placeholder-icon">IMG</div>
-                  <div class="placeholder-label">Add teaser image</div>
-                  <div class="placeholder-path">International Conferences · 2024</div>
-                  <div class="placeholder-path">images/paper-09.jpg</div>
-                </div> -->
-              </div>
-              <figcaption>FEATURE DIVERSITY</figcaption>
-            </figure>
-            <div class="paper-body">
-              <div class="paper-eyebrow"><span class="venue">ISCA INTERSPEECH</span><span class="paper-year">2024</span>
-              </div>
-              <h3>Spoofed Speech Detection with a Focus on Speaker Embedding</h3>
-              <p class="authors"><strong>Hoan My Tran</strong>, David Guennec, Philippe Martin, Aghilas Sini, Damien
-                Lolive, Arnaud Delhay, and Pierre-François Marteau</p>
-              <div class="paper-actions"><a class="paper-link"
-                  href="https://www.isca-archive.org/interspeech_2024/tran24_interspeech.html" rel="noopener noreferrer"
-                  target="_blank">Paper <span aria-hidden="true">↗</span></a></div>
-            </div>
-          </article>
-          <article class="paper" data-kind="International Workshops" data-year="2026">
-            <div class="paper-index">10<span class="index-line"></span></div>
-            <figure class="paper-figure">
-              <div class="figure-frame" style="height: 123px;"><img
-                  alt="Teaser image for A Simple and Affordable Adversarial Attack By Speech Generation Finetuning"
-                  class="teaser-image" loading="lazy"
-                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-                  src="images/slt2026.png" />
-                <!-- <div class="teaser-placeholder" style="display:none;">
+<div class="paper-actions"><a class="paper-link" href="https://ieeexplore.ieee.org/document/11460320" rel="noopener noreferrer" target="_blank">Paper <span aria-hidden="true">↗</span></a></div>
+</div>
+</article><article class="paper" data-kind="International Workshops" data-year="2026">
+<div class="paper-index">10<span class="index-line"></span></div>
+<figure class="paper-figure">
+<div class="figure-frame"><img alt="Teaser image for A Simple and Affordable Adversarial Attack By Speech Generation Finetuning" class="teaser-image" loading="lazy" onerror="this.hidden=true;const p=this.parentElement.querySelector('.teaser-placeholder');if(p)p.style.display='flex';" onload="this.hidden=false;const p=this.parentElement.querySelector('.teaser-placeholder');if(p)p.style.display='none';" src="images/slt2026.png"/>
+<!-- <div class="teaser-placeholder" style="display:none;">
                   <div class="placeholder-icon">IMG</div>
                   <div class="placeholder-label">Add teaser image</div>
                   <div class="placeholder-path">International Workshops · 2026</div>
                   <div class="placeholder-path">images/paper-10.jpg</div>
                 </div> -->
-              </div>
-              <figcaption>ADVERSARIAL ATTACKS</figcaption>
-            </figure>
-            <div class="paper-body">
-              <div class="paper-eyebrow"><span class="venue">IEEE Spoken Language Technology Workshop (SLT)</span><span
-                  class="paper-year">2026</span></div>
-              <h3>A Simple and Affordable Adversarial Attack By Speech Generation Finetuning</h3>
-              <p class="authors">Elie Laurent Benaroya, Damien Lolive, Arnaud Delhay, and <strong>Hoan My Tran</strong>
-              </p>
-              <div class="paper-actions"><span class="unavailable">Link coming soon</span></div>
-            </div>
-          </article>
-          <article class="paper" data-kind="International Workshops" data-year="2024">
-            <div class="paper-index">11<span class="index-line"></span></div>
-            <figure class="paper-figure">
-              <div class="figure-frame" style="height: 100px;"><img
-                  alt="Teaser image for Exploring generalization to unseen audio data for spoofing: Insights from SSL models"
-                  class="teaser-image" loading="lazy"
-                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-                  src="images/asvspoof2024.jpeg" />
-                <div class="teaser-placeholder" style="display:none;">
-                  <div class="placeholder-icon">IMG</div>
-                  <div class="placeholder-label">Add teaser image</div>
-                  <div class="placeholder-path">International Workshops · 2024</div>
-                  <div class="placeholder-path">images/paper-11.jpg</div>
-                </div>
-              </div>
-              <figcaption>SSL INSIGHTS</figcaption>
-            </figure>
-            <div class="paper-body">
-              <div class="paper-eyebrow"><span class="venue">ASVspoof 2024</span><span class="paper-year">2024</span>
-              </div>
-              <h3>Exploring generalization to unseen audio data for spoofing: Insights from SSL models</h3>
-              <p class="authors">Atharva Kulkarni, <strong>Hoan My Tran</strong>, Ajinkya Kulkarni, Sandipana Dowerah,
-                Damien Lolive, and Mathew Magimai Doss</p>
-              <div class="paper-actions"><a class="paper-link"
-                  href="https://www.isca-archive.org/asvspoof_2024/kulkarni24_asvspoof.html" rel="noopener noreferrer"
-                  target="_blank">Paper <span aria-hidden="true">↗</span></a><a class="paper-link"
-                  href="https://hal.science/hal-04671051v2" rel="noopener noreferrer" target="_blank">hal <span
-                    aria-hidden="true">↗</span></a></div>
-            </div>
-          </article>
-          <article class="paper" data-kind="French-speaking Conferences" data-year="2026">
-            <div class="paper-index">12<span class="index-line"></span></div>
-            <figure class="paper-figure">
-              <div class="figure-frame" style="height: 190px;"><img
-                  alt="Teaser image for Simplifier la détection des deepfakes audio avec les réseaux de Kolmogorov-Arnold"
-                  class="teaser-image" loading="lazy"
-                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-                  src="images/jep2026_kan.png" />
-                <div class="teaser-placeholder" style="display:none;">
-                  <div class="placeholder-icon">IMG</div>
-                  <div class="placeholder-label">Add teaser image</div>
-                  <div class="placeholder-path">French-speaking Conferences · 2026</div>
-                  <div class="placeholder-path">images/paper-12.jpg</div>
-                </div>
-              </div>
-              <figcaption>EXPRESSIVENESS / EFFICIENCY</figcaption>
-            </figure>
-            <div class="paper-body">
-              <div class="paper-eyebrow"><span class="venue">Journées d'Etudes sur la Parole (JEP)</span><span
-                  class="paper-year">2026</span></div>
-              <h3>Simplifier la détection des deepfakes audio avec les réseaux de Kolmogorov-Arnold</h3>
-              <p class="authors"><strong>Hoan My Tran</strong>, Aghilas Sini, David Guennec, Arnaud Delhay, Damien
+<div class="teaser-placeholder" style="display:none"><div class="placeholder-icon">IMG</div><div class="placeholder-label">Paper figure</div><div class="placeholder-path">images/slt2026.png</div></div></div>
+
+</figure>
+<div class="paper-body">
+<div class="paper-eyebrow"><span class="venue">IEEE Spoken Language Technology Workshop (SLT)</span><span class="research-tag">Workshop</span></div>
+<h3>A Simple and Affordable Adversarial Attack By Speech Generation Finetuning</h3>
+<p class="authors">Elie Laurent Benaroya, Damien Lolive, Arnaud Delhay, and <strong>Hoan My Tran</strong>
+</p>
+<div class="paper-actions"><span class="unavailable">Publication details forthcoming</span></div>
+</div>
+</article><article class="paper" data-kind="French-speaking Conferences" data-year="2026">
+<div class="paper-index">12<span class="index-line"></span></div>
+<figure class="paper-figure">
+<div class="figure-frame"><img alt="Teaser image for Simplifier la détection des deepfakes audio avec les réseaux de Kolmogorov-Arnold" class="teaser-image" loading="lazy" onerror="this.hidden=true;const p=this.parentElement.querySelector('.teaser-placeholder');if(p)p.style.display='flex';" onload="this.hidden=false;const p=this.parentElement.querySelector('.teaser-placeholder');if(p)p.style.display='none';" src="images/jep2026_kan.png"/>
+<div class="teaser-placeholder" style="display:none;">
+<div class="placeholder-icon">IMG</div>
+<div class="placeholder-label">Add teaser image</div>
+<div class="placeholder-path">French-speaking Conferences · 2026</div>
+<div class="placeholder-path">images/jep2026_kan.png</div>
+</div>
+</div>
+
+</figure>
+<div class="paper-body">
+<div class="paper-eyebrow"><span class="venue">Journées d'Etudes sur la Parole (JEP)</span><span class="research-tag">French-language</span></div>
+<h3>Simplifier la détection des deepfakes audio avec les réseaux de Kolmogorov-Arnold</h3>
+<p class="authors"><strong>Hoan My Tran</strong>, Aghilas Sini, David Guennec, Arnaud Delhay, Damien
                 Lolive and Pierre-François Marteau</p>
-              <div class="paper-actions"><a class="paper-link"
-                  href="https://www.isca-archive.org/jep_2026/tran26b_jep.html" rel="noopener noreferrer"
-                  target="_blank">Paper <span aria-hidden="true">↗</span></a></div>
-            </div>
-          </article>
-          <article class="paper" data-kind="French-speaking Conferences" data-year="2026">
-            <div class="paper-index">13<span class="index-line"></span></div>
-            <figure class="paper-figure">
-              <div class="figure-frame" style="height: 200px;"><img
-                  alt="Teaser image for Évaluation de la robustesse des modèles de fondation pour la détection de deepfakes audio : Influence de la diversité linguistique des données de pré-entraı̂nement"
-                  class="teaser-image" loading="lazy"
-                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-                  src="images/jep2026_sfm.png" />
-                <div class="teaser-placeholder" style="display:none;">
+<div class="paper-actions"><a class="paper-link" href="https://www.isca-archive.org/jep_2026/tran26b_jep.html" rel="noopener noreferrer" target="_blank">Paper <span aria-hidden="true">↗</span></a></div>
+</div>
+</article><article class="paper" data-kind="French-speaking Conferences" data-year="2026">
+<div class="paper-index">13<span class="index-line"></span></div>
+<figure class="paper-figure">
+<div class="figure-frame"><img alt="Teaser image for Évaluation de la robustesse des modèles de fondation pour la détection de deepfakes audio : Influence de la diversité linguistique des données de pré-entraı̂nement" class="teaser-image" loading="lazy" onerror="this.hidden=true;const p=this.parentElement.querySelector('.teaser-placeholder');if(p)p.style.display='flex';" onload="this.hidden=false;const p=this.parentElement.querySelector('.teaser-placeholder');if(p)p.style.display='none';" src="images/jep2026_sfm.png"/>
+<div class="teaser-placeholder" style="display:none;">
+<div class="placeholder-icon">IMG</div>
+<div class="placeholder-label">Add teaser image</div>
+<div class="placeholder-path">French-speaking Conferences · 2026</div>
+<div class="placeholder-path">images/jep2026_sfm.png</div>
+</div>
+</div>
+
+</figure>
+<div class="paper-body">
+<div class="paper-eyebrow"><span class="venue">Journées d'Etudes sur la Parole (JEP)</span><span class="research-tag">French-language</span></div>
+<h3>Évaluation de la robustesse des modèles de fondation pour la détection de deepfakes audio : Influence
+                de la diversité linguistique des données de pré-entraı̂nement</h3>
+<p class="authors"><strong>Hoan My Tran</strong>, Damien Lolive, Aghilas Sini, David Guennec, Arnaud
+                Delhay and Pierre-François Marteau</p>
+<div class="paper-actions"><a class="paper-link" href="https://www.isca-archive.org/jep_2026/tran26c_jep.html" rel="noopener noreferrer" target="_blank">Paper <span aria-hidden="true">↗</span></a></div>
+</div>
+</article></section><section aria-label="2025 publications" class="publication-year-group" data-year-group="2025"><div class="year-group-heading"><h3>2025</h3><span class="year-paper-count">3 papers</span></div><article class="paper" data-kind="International Conferences" data-year="2025">
+<div class="paper-index">06<span class="index-line"></span></div>
+<figure class="paper-figure">
+<div class="figure-frame"><img alt="Teaser image for Multi-level SSL feature gating for audio deepfake detection" class="teaser-image" loading="lazy" onerror="this.hidden=true;const p=this.parentElement.querySelector('.teaser-placeholder');if(p)p.style.display='flex';" onload="this.hidden=false;const p=this.parentElement.querySelector('.teaser-placeholder');if(p)p.style.display='none';" src="images/acmmm2025.png"/>
+<div class="teaser-placeholder" style="display:none;">
+<div class="placeholder-icon">IMG</div>
+<div class="placeholder-label">Add teaser image</div>
+<div class="placeholder-path">International Conferences · 2025</div>
+<div class="placeholder-path">images/acmmm2025.png</div>
+</div>
+</div>
+
+</figure>
+<div class="paper-body">
+<div class="paper-eyebrow"><span class="venue">ACM Multimedia</span>
+<span class="research-tag">Conference</span></div>
+<h3>Multi-level SSL feature gating for audio deepfake detection</h3>
+<p class="authors"><strong>Hoan My Tran</strong>, Damien Lolive, Aghilas Sini, Arnaud Delhay,
+                Pierre-François Marteau, and David Guennec</p>
+<div class="paper-actions"><a class="paper-link" href="https://dl.acm.org/doi/10.1145/3746027.3754568" rel="noopener noreferrer" target="_blank">Paper <span aria-hidden="true">↗</span></a><a class="paper-link" href="https://arxiv.org/abs/2509.03409" rel="noopener noreferrer" target="_blank">arXiv <span aria-hidden="true">↗</span></a><a class="paper-link" href="https://github.com/hoanmyTran/dissimilarity_deepfake_detection" rel="noopener noreferrer" target="_blank">Code
+                  <span aria-hidden="true">↗</span></a></div>
+</div>
+</article><article class="paper" data-kind="International Conferences" data-year="2025">
+<div class="paper-index">07<span class="index-line"></span></div>
+<figure class="paper-figure">
+<div class="figure-frame"><img alt="Teaser image for KAN You Hear the Truth? Audio Deepfake Detection with Kolmogorov–Arnold Networks" class="teaser-image" loading="lazy" onerror="this.hidden=true;const p=this.parentElement.querySelector('.teaser-placeholder');if(p)p.style.display='flex';" onload="this.hidden=false;const p=this.parentElement.querySelector('.teaser-placeholder');if(p)p.style.display='none';" src="images/eusipco2026.png"/>
+<div class="teaser-placeholder" style="display:none;">
+<div class="placeholder-icon">IMG</div>
+<div class="placeholder-label">Add teaser image</div>
+<div class="placeholder-path">International Conferences · 2025</div>
+<div class="placeholder-path">images/eusipco2026.png</div>
+</div>
+</div>
+
+</figure>
+<div class="paper-body">
+<div class="paper-eyebrow"><span class="venue">IEEE European Signal Processing Conference
+                  (EUSIPCO)</span>
+<span class="research-tag">Conference</span></div>
+<h3>KAN You Hear the Truth? Audio Deepfake Detection with Kolmogorov–Arnold Networks</h3>
+<p class="authors"><strong>Hoan My Tran</strong>, Damien Lolive, David Guennec, Aghilas Sini, Arnaud
+                Delhay, and Pierre-François Marteau</p>
+<div class="paper-actions"><a class="paper-link" href="https://ieeexplore.ieee.org/document/11226534" rel="noopener noreferrer" target="_blank">Paper <span aria-hidden="true">↗</span></a><a class="paper-link" href="https://hal.science/hal-05283051v1" rel="noopener noreferrer" target="_blank">hal <span aria-hidden="true">↗</span></a></div>
+</div>
+</article><article class="paper" data-kind="International Conferences" data-year="2025">
+<div class="paper-index">08<span class="index-line"></span></div>
+<figure class="paper-figure">
+<div class="figure-frame"><img alt="Teaser image for Leveraging SSL Speech Features and Mamba for Enhanced DeepFake Detection" class="teaser-image" loading="lazy" onerror="this.hidden=true;const p=this.parentElement.querySelector('.teaser-placeholder');if(p)p.style.display='flex';" onload="this.hidden=false;const p=this.parentElement.querySelector('.teaser-placeholder');if(p)p.style.display='none';" src="images/interspeech2025.png"/>
+<div class="teaser-placeholder" style="display:none;">
+<div class="placeholder-icon">IMG</div>
+<div class="placeholder-label">Add teaser image</div>
+<div class="placeholder-path">International Conferences · 2025</div>
+<div class="placeholder-path">images/interspeech2025.png</div>
+</div>
+</div>
+
+</figure>
+<div class="paper-body">
+<div class="paper-eyebrow"><span class="venue">ISCA INTERSPEECH</span>
+<span class="research-tag">Conference</span></div>
+<h3>Leveraging SSL Speech Features and Mamba for Enhanced DeepFake Detection</h3>
+<p class="authors"><strong>Hoan My Tran</strong>, Damien Lolive, David Guennec, Aghilas Sini, Arnaud
+                Delhay, and Pierre-François Marteau</p>
+<div class="paper-actions"><a class="paper-link" href="https://www.isca-archive.org/interspeech_2025/tran25b_interspeech.html" rel="noopener noreferrer" target="_blank">Paper <span aria-hidden="true">↗</span></a><a class="paper-link" href="https://github.com/hoanmyTran/dissimilarity_deepfake_detection" rel="noopener noreferrer" target="_blank">Code
+                  <span aria-hidden="true">↗</span></a></div>
+</div>
+</article></section><section aria-label="2024 publications" class="publication-year-group" data-year-group="2024"><div class="year-group-heading"><h3>2024</h3><span class="year-paper-count">2 papers</span></div><article class="paper" data-kind="International Conferences" data-year="2024">
+<div class="paper-index">09<span class="index-line"></span></div>
+<figure class="paper-figure">
+<div class="figure-frame"><img alt="Teaser image for Spoofed Speech Detection with a Focus on Speaker Embedding" class="teaser-image" loading="lazy" onerror="this.hidden=true;const p=this.parentElement.querySelector('.teaser-placeholder');if(p)p.style.display='flex';" onload="this.hidden=false;const p=this.parentElement.querySelector('.teaser-placeholder');if(p)p.style.display='none';" src="images/interspeech2024_architecture.png"/>
+<!-- <div class="teaser-placeholder" style="display:none;">
                   <div class="placeholder-icon">IMG</div>
                   <div class="placeholder-label">Add teaser image</div>
-                  <div class="placeholder-path">French-speaking Conferences · 2026</div>
-                  <div class="placeholder-path">images/paper-13.jpg</div>
-                </div>
-              </div>
-              <figcaption>BENCHMARKING</figcaption>
-            </figure>
-            <div class="paper-body">
-              <div class="paper-eyebrow"><span class="venue">Journées d'Etudes sur la Parole (JEP)</span><span
-                  class="paper-year">2026</span></div>
-              <h3>Évaluation de la robustesse des modèles de fondation pour la détection de deepfakes audio : Influence
-                de la diversité linguistique des données de pré-entraı̂nement</h3>
-              <p class="authors"><strong>Hoan My Tran</strong>, Damien Lolive, Aghilas Sini, David Guennec, Arnaud
-                Delhay and Pierre-François Marteau</p>
-              <div class="paper-actions"><a class="paper-link"
-                  href="https://www.isca-archive.org/jep_2026/tran26c_jep.html" rel="noopener noreferrer"
-                  target="_blank">Paper <span aria-hidden="true">↗</span></a></div>
-            </div>
-          </article>
-        </div>
-        <div class="empty-state" id="empty-state">No publications in this period.</div>
-      </div>
-    </section>
-    <section class="section" id="experience">
-      <div class="wrap">
-        <div class="section-top"><span class="section-number">03 / JOURNEY</span>
-          <div>
-            <h2 class="section-heading">Experience &amp; education<span style="color:var(--accent)">.</span></h2>
-            <p class="section-sub">A path through research, teaching, and software engineering.</p>
-          </div>
-        </div>
-        <div class="timeline-grid">
-          <div>
-            <h3 class="timeline-title">Professional experience</h3>
-            <div class="timeline-row">
-              <div class="time-date">Sep. 2025 – Aug. 2026</div>
-              <div class="time-info">
-                <h3>ATER – Lecturer and Researcher</h3>
-                <p>IUT de Lannion – University of Rennes, Lannion, France</p>
-              </div>
-            </div>
-            <div class="timeline-row">
-              <div class="time-date">Mar. 2025 – Jul. 2025</div>
-              <div class="time-info">
-                <h3>Research Intern</h3>
-                <p>National Institute of Informatics (NII), Tokyo, Japan ·
+                  <div class="placeholder-path">International Conferences · 2024</div>
+                  <div class="placeholder-path">images/paper-09.jpg</div>
+                </div> -->
+<div class="teaser-placeholder" style="display:none"><div class="placeholder-icon">IMG</div><div class="placeholder-label">Paper figure</div><div class="placeholder-path">images/interspeech2024_architecture.png</div></div></div>
+
+</figure>
+<div class="paper-body">
+<div class="paper-eyebrow"><span class="venue">ISCA INTERSPEECH</span>
+<span class="research-tag">Conference</span></div>
+<h3>Spoofed Speech Detection with a Focus on Speaker Embedding</h3>
+<p class="authors"><strong>Hoan My Tran</strong>, David Guennec, Philippe Martin, Aghilas Sini, Damien
+                Lolive, Arnaud Delhay, and Pierre-François Marteau</p>
+<div class="paper-actions"><a class="paper-link" href="https://www.isca-archive.org/interspeech_2024/tran24_interspeech.html" rel="noopener noreferrer" target="_blank">Paper <span aria-hidden="true">↗</span></a></div>
+</div>
+</article><article class="paper" data-kind="International Workshops" data-year="2024">
+<div class="paper-index">11<span class="index-line"></span></div>
+<figure class="paper-figure">
+<div class="figure-frame"><img alt="Teaser image for Exploring generalization to unseen audio data for spoofing: Insights from SSL models" class="teaser-image" loading="lazy" onerror="this.hidden=true;const p=this.parentElement.querySelector('.teaser-placeholder');if(p)p.style.display='flex';" onload="this.hidden=false;const p=this.parentElement.querySelector('.teaser-placeholder');if(p)p.style.display='none';" src="images/asvspoof2024.jpeg"/>
+<div class="teaser-placeholder" style="display:none;">
+<div class="placeholder-icon">IMG</div>
+<div class="placeholder-label">Add teaser image</div>
+<div class="placeholder-path">International Workshops · 2024</div>
+<div class="placeholder-path">images/asvspoof2024.jpeg</div>
+</div>
+</div>
+
+</figure>
+<div class="paper-body">
+<div class="paper-eyebrow"><span class="venue">ASVspoof 2024</span>
+<span class="research-tag">Workshop</span></div>
+<h3>Exploring generalization to unseen audio data for spoofing: Insights from SSL models</h3>
+<p class="authors">Atharva Kulkarni, <strong>Hoan My Tran</strong>, Ajinkya Kulkarni, Sandipana Dowerah,
+                Damien Lolive, and Mathew Magimai Doss</p>
+<div class="paper-actions"><a class="paper-link" href="https://www.isca-archive.org/asvspoof_2024/kulkarni24_asvspoof.html" rel="noopener noreferrer" target="_blank">Paper <span aria-hidden="true">↗</span></a><a class="paper-link" href="https://hal.science/hal-04671051v2" rel="noopener noreferrer" target="_blank">hal <span aria-hidden="true">↗</span></a></div>
+</div>
+</article></section></div>
+<div class="empty-state" id="empty-state">No publications in this period.</div>
+</div>
+</section>
+<section class="section" id="experience">
+<div class="wrap">
+<div class="section-top"><span class="section-number">03 / JOURNEY</span>
+<div>
+<h2 class="section-heading">Experience &amp; education<span style="color:var(--accent)">.</span></h2>
+<p class="section-sub">A path through research, teaching, and software engineering.</p>
+</div>
+</div>
+<div class="timeline-grid">
+<div>
+<h3 class="timeline-title">Professional experience</h3>
+<div class="timeline-row">
+<div class="time-date">Sep. 2025 – Aug. 2026</div>
+<div class="time-info">
+<h3>ATER – Lecturer and Researcher</h3>
+<p>IUT de Lannion – University of Rennes, Lannion, France</p>
+</div>
+</div>
+<div class="timeline-row">
+<div class="time-date">Mar. 2025 – Jul. 2025</div>
+<div class="time-info">
+<h3>Research Intern</h3>
+<p>National Institute of Informatics (NII), Tokyo, Japan ·
                   Advised by Prof. Junichi Yamagishi, Asst. Prof. Xin Wang,
                   Xuechen Liu, and Wanying Ge</p>
-              </div>
-            </div>
-            <div class="timeline-row">
-              <div class="time-date">Nov. 2022 – Aug. 2025</div>
-              <div class="time-info">
-                <h3>Lecturer and Researcher</h3>
-                <p>IUT de Lannion – ENSSAT – University of Rennes, Lannion, France</p>
-              </div>
-            </div>
-            <div class="timeline-row">
-              <div class="time-date">Oct. 2021 – Oct. 2022</div>
-              <div class="time-info">
-                <h3>Software Engineer</h3>
-                <p>Talend – Nantes, France</p>
-              </div>
-            </div>
-            <div class="timeline-row">
-              <div class="time-date">Oct. 2018 – Sep. 2021</div>
-              <div class="time-info">
-                <h3>Apprentice Software Engineer</h3>
-                <p>Horoquartz – Saint-Herblain, France</p>
-              </div>
-            </div>
-          </div>
-          <div>
-            <h3 class="timeline-title">Education</h3>
-            <div class="timeline-row">
-              <div class="time-date">Nov. 2022 – Mar. 2026</div>
-              <div class="time-info">
-                <h3>Ph.D. in Computer Science</h3>
-                <p>University of Rennes, Lannion, France · Advised by Prof. Damien Lolive,
+</div>
+</div>
+<div class="timeline-row">
+<div class="time-date">Nov. 2022 – Aug. 2025</div>
+<div class="time-info">
+<h3>Lecturer and Researcher</h3>
+<p>IUT de Lannion – ENSSAT – University of Rennes, Lannion, France</p>
+</div>
+</div>
+<div class="timeline-row">
+<div class="time-date">Oct. 2021 – Oct. 2022</div>
+<div class="time-info">
+<h3>Software Engineer</h3>
+<p>Talend – Nantes, France</p>
+</div>
+</div>
+<div class="timeline-row">
+<div class="time-date">Oct. 2018 – Sep. 2021</div>
+<div class="time-info">
+<h3>Apprentice Software Engineer</h3>
+<p>Horoquartz – Saint-Herblain, France</p>
+</div>
+</div>
+</div>
+<div>
+<h3 class="timeline-title">Education</h3>
+<div class="timeline-row">
+<div class="time-date">Nov. 2022 – Mar. 2026</div>
+<div class="time-info">
+<h3>Ph.D. in Computer Science</h3>
+<p>University of Rennes, Lannion, France · Advised by Prof. Damien Lolive,
                   Prof. François Goasdoué, Prof. Pierre-François Marteau,
                   Asst. Prof. Arnaud Delhay-Lorrain, Asst. Prof. Aghilas Sini</p>
-              </div>
-            </div>
-            <div class="timeline-row">
-              <div class="time-date">Oct. 2018 – Sep. 2021</div>
-              <div class="time-info">
-                <h3>Master of Engineering in Computer Science</h3>
-                <p>IMT Atlantique, Nantes, France</p>
-              </div>
-            </div>
-            <div class="timeline-row">
-              <div class="time-date">Sep. 2015 – Aug. 2017</div>
-              <div class="time-info">
-                <h3>DUT in Computer Science (Foundation Degree)</h3>
-                <p>IUT de Villetaneuse – Sorbonne Paris North University, Villetaneuse, France</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="cv-action"><a class="button" download="" href="CV.pdf">Download academic CV (PDF) ↓</a></div>
-      </div>
-    </section>
-    <!-- <section class="contact-section" id="contact">
+</div>
+</div>
+<div class="timeline-row">
+<div class="time-date">Oct. 2018 – Sep. 2021</div>
+<div class="time-info">
+<h3>Master of Engineering in Computer Science</h3>
+<p>IMT Atlantique, Nantes, France</p>
+</div>
+</div>
+<div class="timeline-row">
+<div class="time-date">Sep. 2015 – Aug. 2017</div>
+<div class="time-info">
+<h3>DUT in Computer Science (Foundation Degree)</h3>
+<p>IUT de Villetaneuse – Sorbonne Paris North University, Villetaneuse, France</p>
+</div>
+</div>
+</div>
+</div>
+<div class="cv-action"><a class="button" download="" href="CV.pdf">Download academic CV (PDF) ↓</a></div>
+</div>
+</section>
+<!-- <section class="contact-section" id="contact">
       <div class="wrap contact-grid">
         <div><span class="eyebrow">04 / CONTACT</span>
           <h2 class="contact-title">Let's talk <em>research.</em></h2>
@@ -1865,24 +1695,46 @@
         </div><a class="contact-link" href="mailto:hoan.tran@irisa.fr">hoan.tran@irisa.fr ↗</a>
       </div>
     </section> -->
-  </main>
-  <footer>
-    <div class="wrap footer-inner"><span>© 2026 Hoan My Tran</span>
-      <div class="footer-links"><a href="https://scholar.google.com/citations?user=xBko7h8AAAAJ&amp;hl=fr"
-          rel="noopener" target="_blank">Scholar ↗</a><a href="https://github.com/hoanmyTran" rel="noopener"
-          target="_blank">GitHub ↗</a><a href="https://www.linkedin.com/in/hoanmy-tran/" rel="noopener"
-          target="_blank">LinkedIn ↗</a><a href="#home">Back to top ↑</a></div>
-      <div class="footer-counter" style="margin: 1.5rem auto 0; display: flex; justify-content: center;">
-        <a href="https://info.flagcounter.com/z7Vq" rel="noopener noreferrer" style="display: inline-block;"
-          target="_blank">
-          <img alt="Flag Counter" loading="lazy"
-            src="https://s01.flagcounter.com/count2/z7Vq/bg_FFFFFF/txt_000000/border_CCCCCC/columns_8/maxflags_20/viewers_0/labels_1/flags_0/percent_0/"
-            style="max-width: 100%; height: auto; display: block;" />
-        </a>
-      </div>
-    </div>
-  </footer>
-  <script>const buttons = document.querySelectorAll('[data-filter]'), papers = [...document.querySelectorAll('.paper')], count = document.getElementById('pub-count'); buttons.forEach(button => button.addEventListener('click', () => { const filter = button.dataset.filter; buttons.forEach(b => b.setAttribute('aria-pressed', String(b === button))); let visible = 0; papers.forEach(p => { let year = Number(p.dataset.year), show = filter === 'all' || (filter === 'older' ? year <= 2024 : p.dataset.year === filter); p.hidden = !show; if (show) visible++ }); count.textContent = visible + ' publication' + (visible !== 1 ? 's' : ''); document.getElementById('empty-state').style.display = visible ? 'none' : 'block' })); const links = [...document.querySelectorAll('nav a[href^="#"]')]; const observer = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id)) } }) }, { rootMargin: '-20% 0px -65% 0px' }); document.querySelectorAll('main section[id]').forEach(s => observer.observe(s));</script>
-</body>
+</main>
+<footer>
+<div class="wrap footer-inner"><span>© 2026 Hoan My Tran</span>
+<div class="footer-links"><a href="https://scholar.google.com/citations?user=xBko7h8AAAAJ&amp;hl=fr" rel="noopener" target="_blank">Scholar ↗</a><a href="https://github.com/hoanmyTran" rel="noopener" target="_blank">GitHub ↗</a><a href="https://www.linkedin.com/in/hoanmy-tran/" rel="noopener" target="_blank">LinkedIn ↗</a><a href="#home">Back to top ↑</a></div>
+<div class="footer-counter" style="margin: 1.5rem auto 0; display: flex; justify-content: center;">
+<a href="https://info.flagcounter.com/z7Vq" rel="noopener noreferrer" style="display: inline-block;" target="_blank">
+<img alt="Flag Counter" loading="lazy" src="https://s01.flagcounter.com/count2/z7Vq/bg_FFFFFF/txt_000000/border_CCCCCC/columns_8/maxflags_20/viewers_0/labels_1/flags_0/percent_0/" style="max-width: 100%; height: auto; display: block;"/>
+</a>
+</div>
+</div>
+</footer>
 
+<script>
+(() => {
+  const buttons = [...document.querySelectorAll('[data-filter]')];
+  const papers = [...document.querySelectorAll('article.paper')];
+  const groups = [...document.querySelectorAll('[data-year-group]')];
+  const counter = document.getElementById('pub-count');
+  const empty = document.getElementById('empty-state');
+  const update = (filter) => {
+    let visible = 0;
+    papers.forEach(p => {
+      const show = filter === 'all' || (filter === 'older' ? +p.dataset.year <= 2024 : p.dataset.year === filter);
+      p.hidden = !show;
+      if (show) visible++;
+    });
+    groups.forEach(g => { g.hidden = !g.querySelector('article.paper:not([hidden])'); });
+    counter.textContent = visible + (visible === 1 ? ' publication' : ' publications');
+    empty.style.display = visible ? 'none' : 'block';
+    buttons.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.filter === filter)));
+  };
+  buttons.forEach(b => b.addEventListener('click', () => update(b.dataset.filter)));
+  update('all');
+  if ('IntersectionObserver' in window) {
+    const links = [...document.querySelectorAll('nav a[href^="#"]')];
+    const observer = new IntersectionObserver(entries => entries.forEach(e => {
+      if(e.isIntersecting) links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id));
+    }), {rootMargin:'-20% 0px -65% 0px'});
+    document.querySelectorAll('main section[id]').forEach(s => observer.observe(s));
+  }
+})();
+</script></body>
 </html>
