@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -1192,7 +1193,6 @@
       }
     }
   </style>
-
 <style>
 /* === WHITE RESEARCH EDITION | DiSL-inspired publication typography & spacing === */
 :root { --bg:#fff; --white:#fff; --ink:#202b35; --muted:#647480; --line:#e9edf0; --accent:#235f83; --pale:#eff6fa; }
@@ -1245,6 +1245,12 @@ body {font-size:15px;color:var(--ink)}
 .footer-counter {flex-basis:100%;width:100%;margin:10px auto 0 !important}
 @media(max-width:850px){.paper {grid-template-columns:minmax(0,230px) minmax(0,1fr) !important;gap:20px !important}.figure-frame {min-height:100px}}
 @media(max-width:620px){#publications.section{padding-top:62px}.paper {grid-template-columns:minmax(0,1fr) !important;gap:15px !important;padding:25px 0 !important}.paper-figure {grid-column:1 !important;grid-row:1 !important;max-width:100%}.paper-body {grid-column:1 !important;grid-row:2 !important}.figure-frame{max-width:100%;min-height:130px;max-height:260px}.figure-frame img.teaser-image{max-height:238px}.paper h3{font-size:18px}.year-group-heading{margin-top:32px}.year-group-heading h3{font-size:25px}.footer-inner{justify-content:center;text-align:center}}
+
+/* Color-coded conference ranks, based on ranks supplied in the original website */
+.core-rank{display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;font:750 10px/1.5 var(--sans);letter-spacing:.015em;padding:4px 9px;border-radius:4px;border:1px solid transparent}
+.core-Astar{background:#f4eafa;color:#7b329b;border-color:#e5cef1}
+.core-A{background:#e8f6ee;color:#23764f;border-color:#cbe8d6}
+.core-B{background:#fff3df;color:#945c14;border-color:#f1ddbb}
 </style></head>
 <body>
 <header>
@@ -1338,7 +1344,6 @@ body {font-size:15px;color:var(--ink)}
 <div class="placeholder-path">images/df_arena.jpg</div>
 </div>
 </div>
-
 </figure>
 <div class="paper-body">
 <div class="paper-eyebrow"><span class="venue">IEEE Open Journal of Signal Processing (OJSP)</span><span class="research-tag">Journal</span></div>
@@ -1359,10 +1364,9 @@ body {font-size:15px;color:var(--ink)}
 <div class="placeholder-path">images/neurips2026.png</div>
 </div>
 </div>
-
 </figure>
 <div class="paper-body">
-<div class="paper-eyebrow"><span class="venue">Neural Information Processing Systems (NeurIPS)</span><span class="research-tag">Conference</span></div>
+<div class="paper-eyebrow"><span class="venue">Neural Information Processing Systems (NeurIPS)</span><span aria-label="CORE rank A*" class="core-rank core-Astar" title="CORE conference rank A*">CORE A*</span><span class="research-tag">Conference</span></div>
 <h3>Progressive Layer-wise Supervision: Deep-to-Shallow Supervision Annealing for Efficient and Robust
                 Speech Deepfake Detection</h3>
 <p class="authors"><strong>Hoan My Tran</strong>, Xin Wang, and Xuechen Liu</p>
@@ -1379,10 +1383,9 @@ body {font-size:15px;color:var(--ink)}
 <div class="placeholder-path">images/interspeech2026.png</div>
 </div>
 </div>
-
 </figure>
 <div class="paper-body">
-<div class="paper-eyebrow"><span class="venue">ISCA INTERSPEECH</span>
+<div class="paper-eyebrow"><span class="venue">ISCA INTERSPEECH</span><span aria-label="CORE rank A" class="core-rank core-A" title="CORE conference rank A">CORE A</span>
 <span class="research-tag">Conference</span></div>
 <h3>Deepfake Word Detection by Next-token Prediction using Fine-tuned Whisper</h3>
 <p class="authors"><strong>Hoan My Tran</strong>, Xin Wang, Wanying Ge, Xuechen Liu, and Junichi Yamagishi
@@ -1401,11 +1404,10 @@ body {font-size:15px;color:var(--ink)}
 <div class="placeholder-path">images/acl2026.png</div>
 </div>
 </div>
-
 </figure>
 <div class="paper-body">
 <div class="paper-eyebrow"><span class="venue">Findings of the Association for Computational Linguistics
-                  (ACL Findings)</span>
+                  (ACL Findings)</span><span aria-label="CORE rank A*" class="core-rank core-Astar" title="CORE conference rank A*">CORE A*</span>
 <span class="research-tag">Conference</span></div>
 <h3>When depth is redundant: Efficient transformer-based speech anti-spoofing</h3>
 <p class="authors"><strong>Hoan My Tran</strong>, Damien Lolive, Aghilas Sini, Arnaud Delhay,
@@ -1423,11 +1425,10 @@ body {font-size:15px;color:var(--ink)}
 <div class="placeholder-path">images/icassp2026.png</div>
 </div>
 </div>
-
 </figure>
 <div class="paper-body">
 <div class="paper-eyebrow"><span class="venue">IEEE International Conference on Acoustics, Speech, and
-                  Signal Processing (ICASSP)</span>
+                  Signal Processing (ICASSP)</span><span aria-label="CORE rank B" class="core-rank core-B" title="CORE conference rank B">CORE B</span>
 <span class="research-tag">Conference</span></div>
 <h3>KAN we make models simpler for Audio Deepfake Detection with Kolmogorov-Arnold Networks?</h3>
 <p class="authors"><strong>Hoan My Tran</strong>, Aghilas Sini, David Guennec, Arnaud Delhay, Damien
@@ -1445,7 +1446,6 @@ body {font-size:15px;color:var(--ink)}
                   <div class="placeholder-path">images/paper-10.jpg</div>
                 </div> -->
 <div class="teaser-placeholder" style="display:none"><div class="placeholder-icon">IMG</div><div class="placeholder-label">Paper figure</div><div class="placeholder-path">images/slt2026.png</div></div></div>
-
 </figure>
 <div class="paper-body">
 <div class="paper-eyebrow"><span class="venue">IEEE Spoken Language Technology Workshop (SLT)</span><span class="research-tag">Workshop</span></div>
@@ -1465,7 +1465,6 @@ body {font-size:15px;color:var(--ink)}
 <div class="placeholder-path">images/jep2026_kan.png</div>
 </div>
 </div>
-
 </figure>
 <div class="paper-body">
 <div class="paper-eyebrow"><span class="venue">Journées d'Etudes sur la Parole (JEP)</span><span class="research-tag">French-language</span></div>
@@ -1485,7 +1484,6 @@ body {font-size:15px;color:var(--ink)}
 <div class="placeholder-path">images/jep2026_sfm.png</div>
 </div>
 </div>
-
 </figure>
 <div class="paper-body">
 <div class="paper-eyebrow"><span class="venue">Journées d'Etudes sur la Parole (JEP)</span><span class="research-tag">French-language</span></div>
@@ -1506,10 +1504,9 @@ body {font-size:15px;color:var(--ink)}
 <div class="placeholder-path">images/acmmm2025.png</div>
 </div>
 </div>
-
 </figure>
 <div class="paper-body">
-<div class="paper-eyebrow"><span class="venue">ACM Multimedia</span>
+<div class="paper-eyebrow"><span class="venue">ACM Multimedia</span><span aria-label="CORE rank A*" class="core-rank core-Astar" title="CORE conference rank A*">CORE A*</span>
 <span class="research-tag">Conference</span></div>
 <h3>Multi-level SSL feature gating for audio deepfake detection</h3>
 <p class="authors"><strong>Hoan My Tran</strong>, Damien Lolive, Aghilas Sini, Arnaud Delhay,
@@ -1528,11 +1525,10 @@ body {font-size:15px;color:var(--ink)}
 <div class="placeholder-path">images/eusipco2026.png</div>
 </div>
 </div>
-
 </figure>
 <div class="paper-body">
 <div class="paper-eyebrow"><span class="venue">IEEE European Signal Processing Conference
-                  (EUSIPCO)</span>
+                  (EUSIPCO)</span><span aria-label="CORE rank B" class="core-rank core-B" title="CORE conference rank B">CORE B</span>
 <span class="research-tag">Conference</span></div>
 <h3>KAN You Hear the Truth? Audio Deepfake Detection with Kolmogorov–Arnold Networks</h3>
 <p class="authors"><strong>Hoan My Tran</strong>, Damien Lolive, David Guennec, Aghilas Sini, Arnaud
@@ -1550,10 +1546,9 @@ body {font-size:15px;color:var(--ink)}
 <div class="placeholder-path">images/interspeech2025.png</div>
 </div>
 </div>
-
 </figure>
 <div class="paper-body">
-<div class="paper-eyebrow"><span class="venue">ISCA INTERSPEECH</span>
+<div class="paper-eyebrow"><span class="venue">ISCA INTERSPEECH</span><span aria-label="CORE rank A" class="core-rank core-A" title="CORE conference rank A">CORE A</span>
 <span class="research-tag">Conference</span></div>
 <h3>Leveraging SSL Speech Features and Mamba for Enhanced DeepFake Detection</h3>
 <p class="authors"><strong>Hoan My Tran</strong>, Damien Lolive, David Guennec, Aghilas Sini, Arnaud
@@ -1572,10 +1567,9 @@ body {font-size:15px;color:var(--ink)}
                   <div class="placeholder-path">images/paper-09.jpg</div>
                 </div> -->
 <div class="teaser-placeholder" style="display:none"><div class="placeholder-icon">IMG</div><div class="placeholder-label">Paper figure</div><div class="placeholder-path">images/interspeech2024_architecture.png</div></div></div>
-
 </figure>
 <div class="paper-body">
-<div class="paper-eyebrow"><span class="venue">ISCA INTERSPEECH</span>
+<div class="paper-eyebrow"><span class="venue">ISCA INTERSPEECH</span><span aria-label="CORE rank A" class="core-rank core-A" title="CORE conference rank A">CORE A</span>
 <span class="research-tag">Conference</span></div>
 <h3>Spoofed Speech Detection with a Focus on Speaker Embedding</h3>
 <p class="authors"><strong>Hoan My Tran</strong>, David Guennec, Philippe Martin, Aghilas Sini, Damien
@@ -1593,7 +1587,6 @@ body {font-size:15px;color:var(--ink)}
 <div class="placeholder-path">images/asvspoof2024.jpeg</div>
 </div>
 </div>
-
 </figure>
 <div class="paper-body">
 <div class="paper-eyebrow"><span class="venue">ASVspoof 2024</span>
@@ -1706,7 +1699,6 @@ body {font-size:15px;color:var(--ink)}
 </div>
 </div>
 </footer>
-
 <script>
 (() => {
   const buttons = [...document.querySelectorAll('[data-filter]')];
